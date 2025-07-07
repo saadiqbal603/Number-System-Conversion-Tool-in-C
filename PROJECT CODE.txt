@@ -1,0 +1,158 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+
+main()
+{
+    int c,b,n,rem,bin,i,oct,j=0,p=1;
+    long int binval,hexa=0,o=1,remi;
+    long int bin1,oct1=0,k=1;
+    char hex[90],hexadecimal[90];
+    while(1)
+    {
+
+
+        printf("\t\t\t\xBD\xBD\xBD\xBD\xBD\xBD\xBD\xBD\xBD\xBD\xBD\xBD\xBD\xBD SELECT CONVERSION \xBD\xBD\xBD\xBD\xBD\xBD\xBD\xBD\xBD\xBD\xBD\xBD\xBD\xBD\n \n\n");
+        printf("\t\t\t\t1. DECIMAL TO BINARY. \n");
+        printf("\t\t\t\t2. DECIMAL TO OCTAL. \n");
+        printf("\t\t\t\t3. DECIMAL TO HEXADECIMAL. \n");
+        printf("\t\t\t\t4. BINARY TO OCTAL. \n");
+        printf("\t\t\t\t5. BINARY TO DECIMAL. \n");
+        printf("\t\t\t\t6. BINARY TO HEXADECIMAL. \n");
+        printf("\t\t\t\t7. EXIT. \n");
+        printf("ENTER YOUR CHOICE:");
+        scanf("%d",&c);
+        system("cls");
+        switch(c)
+        {
+            case 1: //=================================>>>>>case 1
+
+                 i=1;
+                 bin=0;
+        printf("ENETR NUMBER:");
+        scanf("%d",&n);
+        while(n!=0)
+        {
+            rem=n%2;
+            n=n/2;
+            bin=bin+(rem*i);
+            i=i*10;
+        }
+        printf("BINARY VALUE:%d",bin);
+        printf("\n");
+
+		system("pause");
+		system("cls");
+
+                break;
+            case 2: //=================================>>>>>case 2
+                i=1;
+                oct=0;
+        printf("ENTER NUMBER:");
+        scanf("%d",&n);
+        while(n!=0)
+        {
+            rem=n%8;
+            n=n/8;
+            oct=oct+(rem*i);
+            i=i*10;
+        }
+        printf("OCTAL VALUE:%d",oct);
+        printf("\n");
+        	system("pause");
+		system("cls");
+                break;
+            case 3: //=================================>>>>>case 3
+
+        printf("ENTER NUMBER:");
+        scanf("%d",&n);
+        while(n!=0)
+        {
+            rem=n%16;
+            if(rem<10){
+            hex[j++]=48+rem;}
+
+            else{
+                hex[j++]=55+rem;}
+            n=n/16;
+        }
+        for(i=j;i>=0;i--){
+        printf("%c",hex[i]);
+        }
+
+        printf("\n");
+        	system("pause");
+		system("cls");
+
+                break;
+                case 4: //=================================>>>>>case 4
+
+                	printf("ENTER NUMBER:");
+                    scanf("%ld",&bin1);
+                	while(bin1!=0)
+                	{
+                		rem=bin1%10;
+                		oct1=oct1+rem*k;
+                		k=k*2;
+                		bin1=bin1/10;
+					}
+					printf("OCTAL VALUE: %lo\n",oct1);
+					printf("\n");
+						system("pause");
+		system("cls");
+					break;
+                case 5: //=================================>>>>>case 5
+					i=1;
+
+                 int dec;
+        printf("Enter Number:");
+        scanf("%d",&n);
+        while(n!=0)
+        {
+            rem=n%10;
+            n=n/10;
+            dec=dec+(rem*i);
+            i=i*2;
+        }
+        printf("DECIMAL VALUE: %d",dec);
+        printf("\n");
+        	system("pause");
+		system("cls");
+		break;
+
+		case 6: //=================================>>>>>case 6
+
+			printf("ENTER NUMBER:");
+			scanf("%ld",&binval);
+			while(binval!=0)
+			{
+				remi=binval%10;
+				binval=binval/10;
+				hexa=hexa+remi*o;
+				o=o*2; //o=1
+			}
+			printf("HEXADECIMAL VALUE:%lX",hexa);
+			printf("\n");
+        	system("pause");
+		system("cls");
+		break;
+
+
+
+                case 7: //=================================>>>>>case 7
+                printf("Exiting....");
+
+                exit(0);
+                break;
+                default:
+                printf("Invalid choice.\n\n");
+                continue;
+        }
+
+
+
+        }
+
+
+
+        }
